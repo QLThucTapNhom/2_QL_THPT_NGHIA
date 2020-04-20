@@ -32,6 +32,8 @@
             this.drvGV = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tkMa = new System.Windows.Forms.ToolStripMenuItem();
+            this.tkTen = new System.Windows.Forms.ToolStripMenuItem();
             this.btnXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLuu = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSua = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,8 +45,6 @@
             this.txtTenGV = new System.Windows.Forms.TextBox();
             this.txtMaGV = new System.Windows.Forms.TextBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.rdbNu = new System.Windows.Forms.RadioButton();
-            this.rdbNam = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,8 +52,8 @@
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTrinhDo = new System.Windows.Forms.TextBox();
-            this.tkTen = new System.Windows.Forms.ToolStripMenuItem();
-            this.tkMa = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.drvGV)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -92,6 +92,18 @@
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tkMa
+            // 
+            this.tkMa.Name = "tkMa";
+            this.tkMa.Size = new System.Drawing.Size(170, 22);
+            this.tkMa.Text = "Tìm kiếm theo mã";
+            // 
+            // tkTen
+            // 
+            this.tkTen.Name = "tkTen";
+            this.tkTen.Size = new System.Drawing.Size(170, 22);
+            this.tkTen.Text = "Tìm kiếm theo tên";
             // 
             // btnXoa
             // 
@@ -202,34 +214,10 @@
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgaySinh.Location = new System.Drawing.Point(15, 185);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(122, 185);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(253, 22);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(146, 22);
             this.dtpNgaySinh.TabIndex = 9;
-            // 
-            // rdbNu
-            // 
-            this.rdbNu.AutoSize = true;
-            this.rdbNu.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbNu.Location = new System.Drawing.Point(222, 114);
-            this.rdbNu.Name = "rdbNu";
-            this.rdbNu.Size = new System.Drawing.Size(46, 21);
-            this.rdbNu.TabIndex = 6;
-            this.rdbNu.TabStop = true;
-            this.rdbNu.Text = "Nữ";
-            this.rdbNu.UseVisualStyleBackColor = true;
-            // 
-            // rdbNam
-            // 
-            this.rdbNam.AutoSize = true;
-            this.rdbNam.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbNam.Location = new System.Drawing.Point(122, 114);
-            this.rdbNam.Name = "rdbNam";
-            this.rdbNam.Size = new System.Drawing.Size(56, 21);
-            this.rdbNam.TabIndex = 5;
-            this.rdbNam.TabStop = true;
-            this.rdbNam.Text = "Nam";
-            this.rdbNam.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -263,6 +251,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.cbbGioiTinh);
             this.groupBox1.Controls.Add(this.txtSDT);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtTrinhDo);
@@ -272,8 +262,6 @@
             this.groupBox1.Controls.Add(this.txtTenGV);
             this.groupBox1.Controls.Add(this.txtMaGV);
             this.groupBox1.Controls.Add(this.dtpNgaySinh);
-            this.groupBox1.Controls.Add(this.rdbNu);
-            this.groupBox1.Controls.Add(this.rdbNam);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -312,17 +300,27 @@
             this.txtTrinhDo.Size = new System.Drawing.Size(142, 24);
             this.txtTrinhDo.TabIndex = 11;
             // 
-            // tkTen
+            // cbbGioiTinh
             // 
-            this.tkTen.Name = "tkTen";
-            this.tkTen.Size = new System.Drawing.Size(180, 22);
-            this.tkTen.Text = "Tìm kiếm theo tên";
+            this.cbbGioiTinh.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbGioiTinh.FormattingEnabled = true;
+            this.cbbGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbbGioiTinh.Location = new System.Drawing.Point(122, 114);
+            this.cbbGioiTinh.Name = "cbbGioiTinh";
+            this.cbbGioiTinh.Size = new System.Drawing.Size(146, 25);
+            this.cbbGioiTinh.TabIndex = 14;
             // 
-            // tkMa
+            // label7
             // 
-            this.tkMa.Name = "tkMa";
-            this.tkMa.Size = new System.Drawing.Size(180, 22);
-            this.tkMa.Text = "Tìm kiếm theo mã";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(15, 189);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Ngày Sinh";
             // 
             // frmGiaoVien
             // 
@@ -360,8 +358,6 @@
         private System.Windows.Forms.TextBox txtTenGV;
         private System.Windows.Forms.TextBox txtMaGV;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
-        private System.Windows.Forms.RadioButton rdbNu;
-        private System.Windows.Forms.RadioButton rdbNam;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -372,5 +368,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnThoat;
         private System.Windows.Forms.ToolStripMenuItem tkTen;
         private System.Windows.Forms.ToolStripMenuItem tkMa;
+        private System.Windows.Forms.ComboBox cbbGioiTinh;
+        private System.Windows.Forms.Label label7;
     }
 }
