@@ -1,0 +1,9 @@
+USE HeThong_QuanLyHocTap
+
+CREATE PROC del_GV
+	@ID_GV NCHAR(20)
+AS
+BEGIN
+	UPDATE dbo.DayHoc SET ID_GV = NULL WHERE ID_GV = @ID_GV
+	DELETE  FROM dbo.GiaoVien WHERE ID_GV = @ID_GV
+END;

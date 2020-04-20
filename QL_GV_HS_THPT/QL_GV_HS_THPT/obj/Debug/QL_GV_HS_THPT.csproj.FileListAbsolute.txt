@@ -1,0 +1,16 @@
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\bin\Debug\QL_GV_HS_THPT.exe.config
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\bin\Debug\QL_GV_HS_THPT.exe
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\bin\Debug\QL_GV_HS_THPT.pdb
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmDangNhap.resources
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.Properties.Resources.resources
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.exe
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.pdb
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmGiaoDien.resources
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmHocSinh.resources
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmMain.resources
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmGiaoVien.resources
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmDangKy.resources
+C:\Users\Admin\source\repos\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmTKB.resources
