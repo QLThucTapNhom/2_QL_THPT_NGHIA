@@ -49,12 +49,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTrinhDo = new System.Windows.Forms.TextBox();
-            this.exitSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.drvGV)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -69,7 +68,6 @@
             this.drvGV.Name = "drvGV";
             this.drvGV.Size = new System.Drawing.Size(695, 159);
             this.drvGV.TabIndex = 2;
-            this.drvGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drvGV_CellContentClick);
             // 
             // label5
             // 
@@ -85,32 +83,27 @@
             // 
             this.btnTimKiem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tkMa,
-            this.tkTen,
-            this.exitSearchToolStripMenuItem});
+            this.tkTen});
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
             this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnTimKiem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.ShowShortcutKeys = false;
-            this.btnTimKiem.Size = new System.Drawing.Size(69, 67);
+            this.btnTimKiem.Size = new System.Drawing.Size(68, 67);
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // tkMa
             // 
             this.tkMa.Name = "tkMa";
-            this.tkMa.Size = new System.Drawing.Size(180, 22);
+            this.tkMa.Size = new System.Drawing.Size(170, 22);
             this.tkMa.Text = "Tìm kiếm theo mã";
-            this.tkMa.Click += new System.EventHandler(this.tkMa_Click);
             // 
             // tkTen
             // 
             this.tkTen.Name = "tkTen";
-            this.tkTen.Size = new System.Drawing.Size(180, 22);
+            this.tkTen.Size = new System.Drawing.Size(170, 22);
             this.tkTen.Text = "Tìm kiếm theo tên";
-            this.tkTen.Click += new System.EventHandler(this.tkTen_Click);
             // 
             // btnXoa
             // 
@@ -122,7 +115,6 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -134,7 +126,6 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
@@ -142,11 +133,10 @@
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSua.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(117, 67);
+            this.btnSua.Size = new System.Drawing.Size(116, 67);
             this.btnSua.Text = "Thay đổi thông tin";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -158,7 +148,6 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // menuStrip1
             // 
@@ -173,7 +162,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(9, 216);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(554, 71);
+            this.menuStrip1.Size = new System.Drawing.Size(432, 71);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -187,7 +176,6 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // txtQueQuan
             // 
@@ -286,28 +274,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin giáo viên";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 189);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 17);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Ngày Sinh";
-            // 
-            // cbbGioiTinh
-            // 
-            this.cbbGioiTinh.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbGioiTinh.FormattingEnabled = true;
-            this.cbbGioiTinh.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.cbbGioiTinh.Location = new System.Drawing.Point(122, 114);
-            this.cbbGioiTinh.Name = "cbbGioiTinh";
-            this.cbbGioiTinh.Size = new System.Drawing.Size(146, 25);
-            this.cbbGioiTinh.TabIndex = 14;
-            // 
             // txtSDT
             // 
             this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -334,12 +300,27 @@
             this.txtTrinhDo.Size = new System.Drawing.Size(142, 24);
             this.txtTrinhDo.TabIndex = 11;
             // 
-            // exitSearchToolStripMenuItem
+            // cbbGioiTinh
             // 
-            this.exitSearchToolStripMenuItem.Name = "exitSearchToolStripMenuItem";
-            this.exitSearchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitSearchToolStripMenuItem.Text = "Exit Search";
-            this.exitSearchToolStripMenuItem.Click += new System.EventHandler(this.exitSearchToolStripMenuItem_Click);
+            this.cbbGioiTinh.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbGioiTinh.FormattingEnabled = true;
+            this.cbbGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbbGioiTinh.Location = new System.Drawing.Point(122, 114);
+            this.cbbGioiTinh.Name = "cbbGioiTinh";
+            this.cbbGioiTinh.Size = new System.Drawing.Size(146, 25);
+            this.cbbGioiTinh.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(15, 189);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Ngày Sinh";
             // 
             // frmGiaoVien
             // 
@@ -352,7 +333,6 @@
             this.Name = "frmGiaoVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmGiaoVien";
-            this.Load += new System.EventHandler(this.frmGiaoVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.drvGV)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -390,6 +370,5 @@
         private System.Windows.Forms.ToolStripMenuItem tkMa;
         private System.Windows.Forms.ComboBox cbbGioiTinh;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ToolStripMenuItem exitSearchToolStripMenuItem;
     }
 }

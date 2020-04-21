@@ -43,16 +43,7 @@ namespace QL_GV_HS_THPT.GUI
             btnLuu.Enabled = false;
             btnTimKiem.Enabled = true;
         }
-        public void ReadOnlyFasle()
-        {
-            txtMaHS.Enabled = true;
-            txtMaHS.ReadOnly = false;
-            txtTenHS.Enabled = true;
-            txtQueQuan.ReadOnly = false;
-            cbbGioiTinh.Enabled = true;
-            cbbMaLop.Enabled = true;
-            dtpNgaySinh.Enabled = true;
-        }
+        
 
         private void cbbMaLop_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -165,7 +156,6 @@ namespace QL_GV_HS_THPT.GUI
             btnXoa.Enabled = false;
             btnLuu.Enabled = true;
             btnTimKiem.Enabled = false;
-            db.loadDataGridView(dgvHocSinh, "SELECT * FROM dbo.HocSinh");
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -219,9 +209,7 @@ namespace QL_GV_HS_THPT.GUI
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReadOnlyFasle();
             OpenButtonClick();
-            db.loadDataGridView(dgvHocSinh, "SELECT * FROM dbo.HocSinh");
         }
         private void exitSearchToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -243,14 +231,12 @@ namespace QL_GV_HS_THPT.GUI
                     {
                         ThemHocSinh();
                         OpenButtonClick();//Mở lại các bị nút ẩn 
-                        ReadOnlyFasle();
                         break;
                     }
                 case 2: //Sửa
                     {
                         SuaHocSinh();
                         OpenButtonClick();//Mở lại các bị nút ẩn 
-                        ReadOnlyFasle();
                         break;
                     }
               
@@ -275,14 +261,6 @@ namespace QL_GV_HS_THPT.GUI
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbbGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

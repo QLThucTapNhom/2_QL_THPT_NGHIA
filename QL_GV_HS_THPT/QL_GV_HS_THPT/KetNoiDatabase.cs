@@ -10,7 +10,7 @@ namespace QL_GV_HS_THPT
 {
     class KetNoiDatabase
     {
-        public static SqlConnection connection = new SqlConnection(@"Data Source=WIN10PRO\SQLEXPRESS;Initial Catalog=HeThong_QuanLyHocTap;Integrated Security=True");
+        public static SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-0FP3KIB\MSSQLSERVEROK;Initial Catalog=TTN_QuanLyHocTap;Integrated Security=True");
         SqlDataAdapter sqlDataAdapter;
         SqlDataReader sqlDataReader;
         DataSet dataSet = new DataSet();        
@@ -32,21 +32,14 @@ namespace QL_GV_HS_THPT
             sqlCommand.ExecuteNonQuery();
             NgatKetNoi();
         }
-        //public void loadDataGridView(DataGridView dgv, string str)
-        //{
-        //    dataSet.Clear();
-        //    sqlDataAdapter = new SqlDataAdapter(str, connection);
-        //    sqlDataAdapter.Fill(dataSet, "query");
-        //    dgv.DataSource = dataSet.Tables[0];
-        //}
-        public void loadDataGridView(DataGridView dg, string strselect)
+        public void loadDataGridView(DataGridView dgv, string str)
         {
-            DataTable table = new DataTable();
-            sqlDataAdapter = new SqlDataAdapter(strselect, connection);
-            table.Clear();
-            sqlDataAdapter.Fill(table);
-            dg.DataSource = table;
+            dataSet.Clear();
+            sqlDataAdapter = new SqlDataAdapter(str, connection);
+            sqlDataAdapter.Fill(dataSet, "query");
+            dgv.DataSource = dataSet.Tables[0];
         }
+
         public void loadComboBox(ComboBox cbb, string str)
         {
             MoKetNoi();
