@@ -10,7 +10,7 @@ namespace QL_GV_HS_THPT
 {
     class KetNoiDatabase
     {
-        public static SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-G186E8N\SQLEXPRESS;Initial Catalog=HeThong_QuanLyHocTap;Integrated Security=True");
+        public static SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-4H2CDN2;Initial Catalog=HeThong_QuanLyHocTap;Integrated Security=True");
         SqlDataAdapter sqlDataAdapter;
         SqlDataReader sqlDataReader;
         DataSet dataSet = new DataSet();        
