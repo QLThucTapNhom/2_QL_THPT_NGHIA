@@ -169,8 +169,10 @@ namespace QL_GV_HS_THPT.GUI
 
         private void Btnxoa_Click(object sender, EventArgs e)
         {
+            string malop = cbbmalop.Text.Trim();
             DialogResult ys = MessageBox.Show("Bạn có muốn xóa  không?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             deletetkb();
+            db.loadDataGridView(dgvtkb, "EXEC TKB @malop = '" + malop + "'");
             MessageBox.Show("Xóa hoàn tất!");
 
         }
