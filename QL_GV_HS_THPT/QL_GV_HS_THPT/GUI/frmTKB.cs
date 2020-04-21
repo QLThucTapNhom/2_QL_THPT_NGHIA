@@ -103,46 +103,77 @@ namespace QL_GV_HS_THPT.GUI
             txtmon.Text = dgvtkb.Rows[i].Cells[2].Value.ToString();
             cbbbgiaovien.Text = dgvtkb.Rows[i].Cells[3].Value.ToString();
         }
-
+        public void deletetkb()
+        {
+            string malop = cbbmalop.Text.Trim();
+            string magv = cbbbgiaovien.Text.Trim();
+            string thu = txtthu.Text.Trim();
+            string tiet = txttiet.Text.Trim();
+            string mon = txtmon.Text.Trim();
+       
+                string delete = "DELETE FROM dbo.DayHoc WHERE MonHoc = N'" + mon + "'AND ID_GV = N'" + magv + "' AND MaLopHoc=N'" + malop + "' AND  Thu =N'" + thu + "'AND Tiet=N'" + tiet + "'";
+                db.ThucThiKetNoi(delete);
+                db.loadDataGridView(dgvtkb, "SELECT * FROM dbo.DayHoc");
+                
+            
+        }
         private void Btnsua_Click(object sender, EventArgs e)
         {
-            try
+            string malop = cbbmalop.Text.Trim();
+            string magv = cbbbgiaovien.Text.Trim();
+            string thu = txtthu.Text.Trim();
+            string tiet = txttiet.Text.Trim();
+            string mon = txtmon.Text.Trim();
+            if (btnthem.Text == "Sửa")
             {
-                string malop = cbbmalop.Text.Trim();
-                string magv = cbbbgiaovien.Text.Trim();
-                string thu = txtthu.Text.Trim();
-                string tiet = txttiet.Text.Trim();
-                string mon = txtmon.Text.Trim();
 
-                if (cbbmalop.Text.Length != 0 && cbbbgiaovien.Text.Length != 0 && txtthu.Text.Length != 0 && txttiet.Text.Length != 0)
-                {
-                    bool check = db.Check(malop, "SELECT MaLopHoc FROM dbo.DayHoc");
-                    if (check == true)
+                deletetkb();
+                btnthem.Enabled = false;
+                btnxoa.Enabled = false;
+                btnsua.Text = "Hoàn tất";
+            }
+            else
+            {
+                btnsua.Text = "Sửa";
+                btnthem.Enabled = true;
+                btnxoa.Enabled = true;
+                try
+                { 
+                    if (cbbmalop.Text.Length != 0 && cbbbgiaovien.Text.Length != 0 && txtthu.Text.Length != 0 && txttiet.Text.Length != 0)
                     {
-                        
-                        string update = "UPDATE dbo.DayHoc SET MonHoc = N'" + mon + "', ID_GV = N'" + magv + "', Thu=N'" + thu + "', Tiet=N'" + tiet + "' WHERE MaLopHoc=N'" + malop + "'";
-                        db.ThucThiKetNoi(update);
-                        MessageBox.Show("Sửa thông tin cho TKB hoàn tất!");
-                        dgvtkb.DataSource = null;
-                        db.loadDataGridView(dgvtkb, "EXEC TKB @malop = '" + malop + "'");
+                        bool check = db.Check(malop, "SELECT MaLopHoc FROM dbo.DayHoc");
+                        if (check == true)
+                        {
 
+                            db.ThucThiKetNoi("INSERT dbo.DayHoc(MonHoc, ID_GV, MaLopHoc, Thu, Tiet) VALUES (N'" + mon + "', '" + magv + "', '" + malop + "', N'" + thu + "', N'" + tiet + "')");
+                            MessageBox.Show("Sửa hoàn tất!");
+                            db.loadDataGridView(dgvtkb, "EXEC TKB @malop = '" + malop + "'");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lớp học không tồn tại!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Lớp học không tồn tại!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Bạn chưa điền đầy đủ thông tin!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Bạn chưa điền đầy đủ thông tin!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Đã xảy ra lỗi!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Đã xảy ra lỗi!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        private void Btnxoa_Click(object sender, EventArgs e)
+        {
+            DialogResult ys = MessageBox.Show("Bạn có muốn xóa  không?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            deletetkb();
+            MessageBox.Show("Xóa hoàn tất!");
+
+        }
     }
 }
 

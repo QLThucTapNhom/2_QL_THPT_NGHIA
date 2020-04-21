@@ -154,6 +154,7 @@
             this.btnxoa.TabIndex = 8;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = false;
+            this.btnxoa.Click += new System.EventHandler(this.Btnxoa_Click);
             // 
             // txtthu
             // 
