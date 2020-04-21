@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHocSinh));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.cbbMaLop = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtQueQuan = new System.Windows.Forms.TextBox();
@@ -46,13 +48,11 @@
             this.btnXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLuu = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTimKiem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tkMa = new System.Windows.Forms.ToolStripMenuItem();
+            this.tkTen = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvHocSinh = new System.Windows.Forms.DataGridView();
-            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tkTen = new System.Windows.Forms.ToolStripMenuItem();
-            this.tkMa = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHocSinh)).BeginInit();
@@ -80,6 +80,30 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin học sinh";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(16, 185);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 17);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Ngày Sinh";
+            // 
+            // cbbGioiTinh
+            // 
+            this.cbbGioiTinh.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbGioiTinh.FormattingEnabled = true;
+            this.cbbGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbbGioiTinh.Location = new System.Drawing.Point(122, 114);
+            this.cbbGioiTinh.Name = "cbbGioiTinh";
+            this.cbbGioiTinh.Size = new System.Drawing.Size(146, 25);
+            this.cbbGioiTinh.TabIndex = 12;
+            this.cbbGioiTinh.SelectedIndexChanged += new System.EventHandler(this.cbbGioiTinh_SelectedIndexChanged);
             // 
             // cbbMaLop
             // 
@@ -188,7 +212,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(9, 216);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(552, 71);
+            this.menuStrip1.Size = new System.Drawing.Size(434, 71);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -210,7 +234,7 @@
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSua.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(116, 67);
+            this.btnSua.Size = new System.Drawing.Size(117, 67);
             this.btnSua.Text = "Thay đổi thông tin";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -250,11 +274,32 @@
             this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnTimKiem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(68, 67);
+            this.btnTimKiem.Size = new System.Drawing.Size(69, 67);
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // tkMa
+            // 
+            this.tkMa.Name = "tkMa";
+            this.tkMa.Size = new System.Drawing.Size(171, 22);
+            this.tkMa.Text = "Tìm kiếm theo mã";
+            this.tkMa.Click += new System.EventHandler(this.tkMa_Click);
+            // 
+            // tkTen
+            // 
+            this.tkTen.Name = "tkTen";
+            this.tkTen.Size = new System.Drawing.Size(171, 22);
+            this.tkTen.Text = "Tìm kiếm theo tên";
+            this.tkTen.Click += new System.EventHandler(this.tkTen_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // btnThoat
             // 
@@ -278,49 +323,6 @@
             this.dgvHocSinh.Size = new System.Drawing.Size(599, 119);
             this.dgvHocSinh.TabIndex = 2;
             this.dgvHocSinh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHocSinh_CellContentClick);
-            // 
-            // cbbGioiTinh
-            // 
-            this.cbbGioiTinh.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbGioiTinh.FormattingEnabled = true;
-            this.cbbGioiTinh.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.cbbGioiTinh.Location = new System.Drawing.Point(122, 114);
-            this.cbbGioiTinh.Name = "cbbGioiTinh";
-            this.cbbGioiTinh.Size = new System.Drawing.Size(146, 25);
-            this.cbbGioiTinh.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 185);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 17);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Ngày Sinh";
-            // 
-            // tkTen
-            // 
-            this.tkTen.Name = "tkTen";
-            this.tkTen.Size = new System.Drawing.Size(180, 22);
-            this.tkTen.Text = "Tìm kiếm theo tên";
-            this.tkTen.Click += new System.EventHandler(this.tkTen_Click);
-            // 
-            // tkMa
-            // 
-            this.tkMa.Name = "tkMa";
-            this.tkMa.Size = new System.Drawing.Size(180, 22);
-            this.tkMa.Text = "Tìm kiếm theo mã";
-            this.tkMa.Click += new System.EventHandler(this.tkMa_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // frmHocSinh
             // 

@@ -62,3 +62,19 @@ D:\GIThub1008\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THP
 D:\GIThub1008\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.csproj.CoreCompileInputs.cache
 D:\GIThub1008\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.exe
 D:\GIThub1008\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.pdb
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\bin\Debug\QL_GV_HS_THPT.exe.config
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\bin\Debug\QL_GV_HS_THPT.exe
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\bin\Debug\QL_GV_HS_THPT.pdb
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.csprojAssemblyReference.cache
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmDangKy.resources
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmDangNhap.resources
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmGiaoDien.resources
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmGiaoVien.resources
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmHocSinh.resources
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmMain.resources
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.GUI.frmTKB.resources
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.Properties.Resources.resources
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.csproj.GenerateResource.cache
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.csproj.CoreCompileInputs.cache
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.exe
+D:\Hoc ky 6\tt nhóm\Nhom\2_QL_THPT_NGHIA\QL_GV_HS_THPT\QL_GV_HS_THPT\obj\Debug\QL_GV_HS_THPT.pdb

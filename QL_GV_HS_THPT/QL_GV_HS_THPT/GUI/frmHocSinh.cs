@@ -275,6 +275,14 @@ namespace QL_GV_HS_THPT.GUI
 
         }
 
-        
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
