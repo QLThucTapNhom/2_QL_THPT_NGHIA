@@ -46,5 +46,21 @@ namespace QL_GV_HS_THPT.GUI
         {
             MessageBox.Show("Coming soon !!!");
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            DialogResult ds = MessageBox.Show("Bạn có muốn đăng suất !!","Đăng suất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(ds == DialogResult.Yes)
+            {
+                frmGiaoDien gd = new frmGiaoDien();
+                gd.Show();
+                this.Close();
+            }
+        }
     }
 }

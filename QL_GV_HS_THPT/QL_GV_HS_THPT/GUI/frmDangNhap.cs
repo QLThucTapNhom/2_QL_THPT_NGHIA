@@ -65,6 +65,8 @@ namespace QL_GV_HS_THPT.GUI
             gd.Show();
         }
 
+       
+
         private void txtMatKhau_TextChanged(object sender, EventArgs e)
         {
 

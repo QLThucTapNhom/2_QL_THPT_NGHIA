@@ -17,4 +17,13 @@ WHERE dh.ID_GV = gv.ID_GV AND @malop = dh.MaLopHoc
 GROUP BY dh.Thu,dh.Tiet,dh.MonHoc,gv.HoTen
 ORDER BY dh.Thu ASC
 
+
+ALTER PROC TKB @malop NCHAR(20)
+AS
+SELECT dh.Thu AS N'Thứ',dh.Tiet AS N'Tiết',dh.MonHoc AS N'Môn học',dh.ID_GV AS N'ID giáo viên'
+FROM dbo.DayHoc dh
+WHERE dh.ID_GV = dh.ID_GV AND @malop = dh.MaLopHoc
+GROUP BY dh.Thu,dh.Tiet,dh.MonHoc,dh.ID_GV
+ORDER BY dh.Thu ASC
+
 EXEC TKB @malop = 'L7A'
