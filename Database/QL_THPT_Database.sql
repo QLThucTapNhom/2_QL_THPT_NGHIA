@@ -26,7 +26,7 @@ CREATE TABLE GiaoVien(
 )
 GO
 
-CREATE TABLE LopHoc(
+CREATE TABLE LopHoc( 
 	MaLopHoc NCHAR(20) NOT NULL,
 	TenLopHoc NVARCHAR(50) NOT NULL,
 	NamHoc NVARCHAR(10),
@@ -69,7 +69,7 @@ VALUES ('004', N'Ngô Quang Chiến', N'Nam', '1970-4-12', N'Hà Nội', N'Giáo
 INSERT dbo.GiaoVien(ID_GV, HoTen, GioiTinh, NgaySinh, QueQuan, TrinhDo, SDT)
 VALUES ('005', N'Nguyễn Minh Công', N'Nam', '1972-6-2', N'Lao Cai', N'Giáo viên' , 0364211017)
 
-INSERT dbo.HocSinh(ID_HS, HoTen, GioiTinh, NgaySinh, QueQuan, MaLopHoc)
+INSERT HocSinh(ID_HS, HoTen, GioiTinh, NgaySinh, QueQuan, MaLopHoc)
 VALUES ('20032', N'Nguyễn Thái Sơn', N'Nam', '2007-10-20', N'Hà Nội', 'L7A')
 INSERT dbo.HocSinh(ID_HS, HoTen, GioiTinh, NgaySinh, QueQuan, MaLopHoc)
 VALUES ('20029', N'Lê Như Quỳnh', N'Nữ', '2007-12-14', N'Hà Nội', 'L7A')
@@ -80,7 +80,7 @@ VALUES ('20012', N'Vũ Thu Hường', N'Nữ', '2007-1-20', N'Hà Nội', 'L7A')
 INSERT dbo.HocSinh(ID_HS, HoTen, GioiTinh, NgaySinh, QueQuan, MaLopHoc)
 VALUES ('20002', N'Trần Hải Anh', N'Nam', '2007-1-31', N'Hà Nội', 'L7A')
 
-INSERT dbo.DayHoc(MonHoc, ID_GV, MaLopHoc, Thu, Tiet)
+INSERT DayHoc(MonHoc, ID_GV, MaLopHoc, Thu, Tiet)
 VALUES (N'Toán', '002', 'L7A', N'Thứ 3', N'1-3')
 INSERT dbo.DayHoc(MonHoc, ID_GV, MaLopHoc, Thu, Tiet)
 VALUES (N'Lý', '004', 'L7A', N'Thứ 4', N'10-12')
@@ -91,7 +91,7 @@ VALUES (N'Tiếng Anh', '003', 'L7A', N'Thứ 3', N'4-6')
 INSERT dbo.DayHoc(MonHoc, ID_GV, MaLopHoc, Thu, Tiet)
 VALUES (N'Sinh', '005', 'L7A', N'Thứ 5', N'4-6')
 
-INSERT dbo.LopHoc(MaLopHoc, TenLopHoc, NamHoc)
+INSERT LopHoc(MaLopHoc, TenLopHoc, NamHoc)
 VALUES ('L7A', N'Lớp 7A', N'2019-2020')
 
 INSERT dbo.TaiKhoan(ID_TaiKhoan, TenTaiKhoan, MatKhau)

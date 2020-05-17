@@ -20,8 +20,8 @@ namespace QL_GV_HS_THPT.GUI
         public int temp = 0; //bien dung nhan biet lua chon chuc nang
         private void frmHocSinh_Load(object sender, EventArgs e)
         {
-            db.loadDataGridView(dgvHocSinh, "SELECT * FROM dbo.HocSinh");
-            db.loadComboBox(cbbMaLop, "SELECT MaLopHoc FROM dbo.LopHoc");
+            db.loadDataGridView(dgvHocSinh, "SELECT * FROM HocSinh");
+            db.loadComboBox(cbbMaLop, "SELECT MaLopHoc FROM LopHoc");
             btnLuu.Enabled = false;
             dtpNgaySinh.Format = DateTimePickerFormat.Custom;
             dtpNgaySinh.CustomFormat = "dd-MM-yyyy";
@@ -59,7 +59,7 @@ namespace QL_GV_HS_THPT.GUI
         private void cbbMaLop_SelectedIndexChanged(object sender, EventArgs e)
         {
             string MaLop = cbbMaLop.SelectedItem.ToString();
-            db.loadDataGridView(dgvHocSinh, "SELECT * FROM dbo.HocSinh WHERE MaLopHoc=N'"+MaLop+"'");
+            db.loadDataGridView(dgvHocSinh, "SELECT * FROM HocSinh WHERE MaLopHoc=N'"+MaLop+"'");
             
         }
 
@@ -88,11 +88,11 @@ namespace QL_GV_HS_THPT.GUI
 
                 if (maHS.Length != 0 && tenHS.Length != 0 && gioiTinh.Length != 0 && queQuan.Length != 0 && maLop.Length != 0)
                 {
-                    bool check = db.Check(maHS, "SELECT ID_HS FROM dbo.HocSinh");
+                    bool check = db.Check(maHS, "SELECT ID_HS FROM HocSinh");
                     if (check == false)
                     {
 
-                        string insert = "INSERT INTO dbo.HocSinh( ID_HS ,HoTen ,GioiTinh ,NgaySinh ,QueQuan ,MaLopHoc)"
+                        string insert = "INSERT INTO HocSinh( ID_HS ,HoTen ,GioiTinh ,NgaySinh ,QueQuan ,MaLopHoc)"
                          + "VALUES(N'" + maHS + "', N'" + tenHS + "', N'" + gioiTinh + "', '" + ngaySinh + "', N'" + queQuan + "', N'" + maLop + "')";
 
                         //string insert = "INSERT dbo.HocSinh(ID_HS, HoTen, GioiTinh, NgaySinh, QueQuan, MaLopHoc)" +
@@ -100,7 +100,7 @@ namespace QL_GV_HS_THPT.GUI
                         db.ThucThiKetNoi(insert);
                         MessageBox.Show("Thêm học sinh " + tenHS + " hoàn tất!");
                         dgvHocSinh.DataSource = null;
-                        db.loadDataGridView(dgvHocSinh, "SELECT * FROM dbo.HocSinh WHERE ID_HS=N'" + maHS + "'");
+                        db.loadDataGridView(dgvHocSinh, "SELECT * FROM HocSinh WHERE ID_HS=N'" + maHS + "'");
 
                     }
                     else
@@ -132,15 +132,15 @@ namespace QL_GV_HS_THPT.GUI
 
                 if (maHS.Length != 0 && tenHS.Length != 0 && gioiTinh.Length != 0 && queQuan.Length != 0 && maLop.Length != 0)
                 {
-                    bool check = db.Check(maHS, "SELECT ID_HS FROM dbo.HocSinh");
+                    bool check = db.Check(maHS, "SELECT ID_HS FROM HocSinh");
                     if (check == true)
                     {
 
-                        string update = "UPDATE dbo.HocSinh SET HoTen = N'"+tenHS+"', GioiTinh = N'"+gioiTinh+"', NgaySinh='"+ngaySinh+"', QueQuan=N'"+queQuan+"', MaLopHoc=N'"+maLop+"' WHERE ID_HS=N'"+maHS+"'";
+                        string update = "UPDATE HocSinh SET HoTen = N'"+tenHS+"', GioiTinh = N'"+gioiTinh+"', NgaySinh='"+ngaySinh+"', QueQuan=N'"+queQuan+"', MaLopHoc=N'"+maLop+"' WHERE ID_HS=N'"+maHS+"'";
                         db.ThucThiKetNoi(update);
                         MessageBox.Show("Sửa thông tin cho " + maHS + " hoàn tất!");
                         dgvHocSinh.DataSource = null;
-                        db.loadDataGridView(dgvHocSinh, "SELECT * FROM dbo.HocSinh WHERE ID_HS=N'" + maHS + "'");
+                        db.loadDataGridView(dgvHocSinh, "SELECT * FROM HocSinh WHERE ID_HS=N'" + maHS + "'");
 
                     }
                     else
@@ -167,7 +167,7 @@ namespace QL_GV_HS_THPT.GUI
             btnXoa.Enabled = false;
             btnLuu.Enabled = true;
             btnTimKiem.Enabled = false;
-            db.loadDataGridView(dgvHocSinh, "SELECT * FROM dbo.HocSinh");
+            db.loadDataGridView(dgvHocSinh, "SELECT * FROM HocSinh");
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -184,10 +184,10 @@ namespace QL_GV_HS_THPT.GUI
             DialogResult ys = MessageBox.Show("Bạn có muốn xóa "+txtTenHS.Text.Trim()+" không?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ys == DialogResult.Yes)
             {
-                string del = "DELETE FROM dbo.HocSinh WHERE ID_HS=N'" + txtMaHS.Text.Trim() + "'";
+                string del = "DELETE FROM HocSinh WHERE ID_HS=N'" + txtMaHS.Text.Trim() + "'";
                 db.ThucThiKetNoi(del);
                 MessageBox.Show("Xóa " + txtMaHS.Text.Trim() + " hoàn tất!");
-                db.loadDataGridView(dgvHocSinh, "SELECT * FROM dbo.HocSinh");
+                db.loadDataGridView(dgvHocSinh, "SELECT * FROM HocSinh");
                 Clear();
             }
         }
@@ -210,20 +210,20 @@ namespace QL_GV_HS_THPT.GUI
         private void tkMa_Click(object sender, EventArgs e)
         {
             txtTenHS.Clear();
-            string timkiem = "SELECT * FROM dbo.HocSinh WHERE ID_HS=N'" + txtMaHS.Text.Trim() + "'";
+            string timkiem = "SELECT * FROM HocSinh WHERE ID_HS=N'" + txtMaHS.Text.Trim() + "'";
             db.loadDataGridView(dgvHocSinh, timkiem);
         }
         private void tkTen_Click(object sender, EventArgs e)
         {
             txtMaHS.Clear();
-            string timkiem = "SELECT * FROM dbo.HocSinh WHERE HoTen LIKE N'%" + txtTenHS.Text.Trim() + "%'";
+            string timkiem = "SELECT * FROM HocSinh WHERE HoTen LIKE N'%" + txtTenHS.Text.Trim() + "%'";
             db.loadDataGridView(dgvHocSinh, timkiem);
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReadOnlyFasle();
             OpenButtonClick();
-            db.loadDataGridView(dgvHocSinh, "SELECT * FROM dbo.HocSinh");
+            db.loadDataGridView(dgvHocSinh, "SELECT * FROM HocSinh");
         }
         private void exitSearchToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -236,7 +236,7 @@ namespace QL_GV_HS_THPT.GUI
             {
                 Clear();
                 OpenButtonClick();
-                db.loadDataGridView(dgvHocSinh, "SELECT * FROM dbo.HocSinh");
+                db.loadDataGridView(dgvHocSinh, "SELECT * FROM HocSinh");
             }
             
         }
@@ -275,7 +275,7 @@ namespace QL_GV_HS_THPT.GUI
         private void MaHS_TextChanged(object sender, EventArgs e)
         {
             txtTenHS.Clear();
-            string timkiem = "SELECT * FROM dbo.HocSinh WHERE ID_HS=N'" + txtMaHS.Text.Trim() + "'";
+            string timkiem = "SELECT * FROM HocSinh WHERE ID_HS=N'" + txtMaHS.Text.Trim() + "'";
             db.loadDataGridView(dgvHocSinh, timkiem);
         }
         private void txtTenHS_TextChanged(object sender, EventArgs e)

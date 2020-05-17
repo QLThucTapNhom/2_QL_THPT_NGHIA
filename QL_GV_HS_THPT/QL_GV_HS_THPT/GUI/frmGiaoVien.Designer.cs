@@ -92,7 +92,7 @@
             this.btnTimKiem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.ShowShortcutKeys = false;
-            this.btnTimKiem.Size = new System.Drawing.Size(68, 67);
+            this.btnTimKiem.Size = new System.Drawing.Size(69, 67);
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -101,21 +101,21 @@
             // tkMa
             // 
             this.tkMa.Name = "tkMa";
-            this.tkMa.Size = new System.Drawing.Size(170, 22);
+            this.tkMa.Size = new System.Drawing.Size(171, 22);
             this.tkMa.Text = "Tìm kiếm theo mã";
             this.tkMa.Click += new System.EventHandler(this.tkMa_Click);
             // 
             // tkTen
             // 
             this.tkTen.Name = "tkTen";
-            this.tkTen.Size = new System.Drawing.Size(170, 22);
+            this.tkTen.Size = new System.Drawing.Size(171, 22);
             this.tkTen.Text = "Tìm kiếm theo tên";
             this.tkTen.Click += new System.EventHandler(this.tkTen_Click);
             // 
             // exitSearchToolStripMenuItem
             // 
             this.exitSearchToolStripMenuItem.Name = "exitSearchToolStripMenuItem";
-            this.exitSearchToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.exitSearchToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.exitSearchToolStripMenuItem.Text = "Exit Search";
             this.exitSearchToolStripMenuItem.Click += new System.EventHandler(this.exitSearchToolStripMenuItem_Click);
             // 
@@ -149,7 +149,7 @@
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSua.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(116, 67);
+            this.btnSua.Size = new System.Drawing.Size(117, 67);
             this.btnSua.Text = "Thay đổi thông tin";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -180,7 +180,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(9, 216);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(432, 71);
+            this.menuStrip1.Size = new System.Drawing.Size(434, 71);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -293,6 +293,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin giáo viên";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label7
             // 

@@ -22,7 +22,7 @@ namespace QL_GV_HS_THPT.GUI
 
         private void frmGiaoVien_Load(object sender, EventArgs e)
         {
-            db.loadDataGridView(drvGV, "SELECT * FROM dbo.GiaoVien");
+            db.loadDataGridView(drvGV, "SELECT * FROM GiaoVien");
             btnLuu.Enabled = false;
             dtpNgaySinh.Format = DateTimePickerFormat.Custom;
             dtpNgaySinh.CustomFormat = "dd-MM-yyyy";
@@ -83,16 +83,16 @@ namespace QL_GV_HS_THPT.GUI
 
                 if (maGV.Length != 0 && tenGV.Length != 0 && gioiTinh.Length != 0 && queQuan.Length != 0 && trinhDo.Length != 0 && sdt.Length != 0)
                 {
-                    bool check = db.Check(maGV, "SELECT ID_GV FROM dbo.GiaoVien");
+                    bool check = db.Check(maGV, "SELECT ID_GV FROM GiaoVien");
                     if (check == false)
                     {
 
-                        string insert = "INSERT INTO dbo.GiaoVien( ID_GV ,HoTen ,GioiTinh ,NgaySinh ,QueQuan ,TrinhDo ,SDT)"
+                        string insert = "INSERT INTO GiaoVien( ID_GV ,HoTen ,GioiTinh ,NgaySinh ,QueQuan ,TrinhDo ,SDT)"
                         + "VALUES  ( N'" + maGV + "' , N'" + tenGV + "' , N'" + gioiTinh + "' , '" + ngaySinh + "' , N'" + queQuan + "' , N'" + trinhDo + "' , '" + sdt + "' )";
                         db.ThucThiKetNoi(insert);
                         MessageBox.Show("Thêm GV " + tenGV + " hoàn tất!");
                         drvGV.DataSource = null;
-                        db.loadDataGridView(drvGV, "SELECT * FROM dbo.GiaoVien WHERE ID_GV=N'" + maGV + "'");
+                        db.loadDataGridView(drvGV, "SELECT * FROM GiaoVien WHERE ID_GV=N'" + maGV + "'");
 
                     }
                     else
@@ -124,16 +124,16 @@ namespace QL_GV_HS_THPT.GUI
 
                 if (maGV.Length != 0 && tenGV.Length != 0 && gioiTinh.Length != 0 && queQuan.Length != 0 && trinhDo.Length != 0 && sdt.Length != 0)
                 {
-                    bool check = db.Check(maGV, "SELECT ID_GV FROM dbo.GiaoVien");
+                    bool check = db.Check(maGV, "SELECT ID_GV FROM GiaoVien");
                     if (check == true)
                     {
 
-                        string update = "UPDATE dbo.GiaoVien SET HoTen=N'" + tenGV + "' ,GioiTinh=N'" + gioiTinh + "' ,"
+                        string update = "UPDATE GiaoVien SET HoTen=N'" + tenGV + "' ,GioiTinh=N'" + gioiTinh + "' ,"
                             + "NgaySinh='" + ngaySinh + "' ,QueQuan=N'" + queQuan + "' ,TrinhDo=N'" + trinhDo + "' ,SDT=N'" + sdt + "' WHERE ID_GV=N'" + maGV + "'";
                         db.ThucThiKetNoi(update);
                         MessageBox.Show("Sửa thông tin GV: " + maGV + " hoàn tất!");
                         drvGV.DataSource = null;
-                        db.loadDataGridView(drvGV, "SELECT * FROM dbo.GiaoVien WHERE ID_GV=N'" + maGV + "'");
+                        db.loadDataGridView(drvGV, "SELECT * FROM GiaoVien WHERE ID_GV=N'" + maGV + "'");
 
                     }
                     else
@@ -162,7 +162,7 @@ namespace QL_GV_HS_THPT.GUI
             btnLuu.Enabled = true;
             btnTimKiem.Enabled = false;
             drvGV.DataSource = null;
-            db.loadDataGridView(drvGV, "SELECT * FROM dbo.GiaoVien");
+            db.loadDataGridView(drvGV, "SELECT * FROM GiaoVien");
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -182,12 +182,12 @@ namespace QL_GV_HS_THPT.GUI
             DialogResult ys = MessageBox.Show("Bạn có muốn xóa " + txtTenGV.Text.Trim() + " không?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ys == DialogResult.Yes)
             {
-                string dayhoc = "DELETE FROM dbo.DayHoc WHERE ID_GV = N'" + txtMaGV.Text.Trim() + "'";
+                string dayhoc = "DELETE FROM DayHoc WHERE ID_GV = N'" + txtMaGV.Text.Trim() + "'";
                 db.ThucThiKetNoi(dayhoc);
-                string del = "DELETE FROM dbo.GiaoVien WHERE ID_GV = N'" + txtMaGV.Text.Trim() + "'";                
+                string del = "DELETE FROM GiaoVien WHERE ID_GV = N'" + txtMaGV.Text.Trim() + "'";                
                 db.ThucThiKetNoi(del);
                 MessageBox.Show("Xóa " + txtMaGV.Text.Trim() + " hoàn tất!");
-                db.loadDataGridView(drvGV, "SELECT * FROM dbo.GiaoVien");
+                db.loadDataGridView(drvGV, "SELECT * FROM GiaoVien");
                 Clear();
             }
         }
@@ -212,14 +212,14 @@ namespace QL_GV_HS_THPT.GUI
         private void tkMa_Click(object sender, EventArgs e)
         {
             txtTenGV.Clear();
-            string timkiem = "SELECT * FROM dbo.GiaoVien WHERE ID_GV=N'" + txtMaGV.Text.Trim() + "'";
+            string timkiem = "SELECT * FROM GiaoVien WHERE ID_GV=N'" + txtMaGV.Text.Trim() + "'";
             db.loadDataGridView(drvGV, timkiem);
         }
 
         private void tkTen_Click(object sender, EventArgs e)
         {
             txtMaGV.Clear();
-            string timkiem = "SELECT * FROM dbo.GiaoVien WHERE HoTen LIKE N'%" + txtTenGV.Text.Trim() + "%'";
+            string timkiem = "SELECT * FROM GiaoVien WHERE HoTen LIKE N'%" + txtTenGV.Text.Trim() + "%'";
             db.loadDataGridView(drvGV, timkiem);
         }
 
@@ -227,7 +227,7 @@ namespace QL_GV_HS_THPT.GUI
         {
             OpenButton();
             ReadOnlyFasle();
-            db.loadDataGridView(drvGV, "SELECT * FROM dbo.GiaoVien");
+            db.loadDataGridView(drvGV, "SELECT * FROM GiaoVien");
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -260,8 +260,13 @@ namespace QL_GV_HS_THPT.GUI
             {
                 Clear();
                 OpenButton();
-                db.loadDataGridView(drvGV, "SELECT * FROM dbo.GiaoVien");
+                db.loadDataGridView(drvGV, "SELECT * FROM GiaoVien");
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

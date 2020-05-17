@@ -58,7 +58,7 @@ namespace QL_GV_HS_THPT.GUI
             DongDK();
             btnLuu.Enabled = false;
             db.loadComboBox(cbbmalop, "select MaLopHoc from LopHoc ");
-            db.loadComboBox(cbbbgiaovien, "SELECT ID_GV FROM dbo.GiaoVien ");
+            db.loadComboBox(cbbbgiaovien, "SELECT ID_GV FROM GiaoVien ");
             
         }
 
@@ -109,7 +109,7 @@ namespace QL_GV_HS_THPT.GUI
             string thu = txtthu.Text.Trim();
             string tiet = txttiet.Text.Trim();
             string mon = txtmon.Text.Trim();
-            string delete = "DELETE FROM dbo.DayHoc WHERE MonHoc = N'" + mon + "'AND ID_GV = N'" + magv + "' AND MaLopHoc=N'" + malop + "' AND  Thu =N'" + thu + "'AND Tiet=N'" + tiet + "'";
+            string delete = "DELETE FROM DayHoc WHERE MonHoc = N'" + mon + "'AND ID_GV = N'" + magv + "' AND MaLopHoc=N'" + malop + "' AND  Thu =N'" + thu + "'AND Tiet=N'" + tiet + "'";
             db.ThucThiKetNoi(delete);
             //db.loadDataGridView(dgvtkb, "SELECT * FROM dbo.DayHoc");
 
@@ -146,10 +146,10 @@ namespace QL_GV_HS_THPT.GUI
 
                         if (cbbmalop.Text.Length != 0 && cbbbgiaovien.Text.Length != 0 && txtthu.Text.Length != 0 && txttiet.Text.Length != 0)
                         {
-                            bool check = db.Check(cbbmalop.Text, "SELECT MaLopHoc FROM dbo.DayHoc WHERE Thu = N'" + thu + "' AND Tiet =N'" + tiet + "'");
+                            bool check = db.Check(cbbmalop.Text, "SELECT MaLopHoc FROM DayHoc WHERE Thu = N'" + thu + "' AND Tiet =N'" + tiet + "'");
                             if (check == false)
                             {
-                                db.ThucThiKetNoi("INSERT dbo.DayHoc(MonHoc, ID_GV, MaLopHoc, Thu, Tiet) VALUES (N'" + mon + "', '" + magv + "', '" + malop + "', N'" + thu + "', N'" + tiet + "')");
+                                db.ThucThiKetNoi("INSERT DayHoc(MonHoc, ID_GV, MaLopHoc, Thu, Tiet) VALUES (N'" + mon + "', '" + magv + "', '" + malop + "', N'" + thu + "', N'" + tiet + "')");
                                 MessageBox.Show("Thêm hoàn tất!");
                                 db.loadDataGridView(dgvtkb, "EXEC TKB @malop = '" + malop + "'");
                                 setStart();
@@ -182,7 +182,7 @@ namespace QL_GV_HS_THPT.GUI
 
                         if (cbbmalop.Text.Length != 0 && cbbbgiaovien.Text.Length != 0 && txtthu.Text.Length != 0 && txttiet.Text.Length != 0)
                         {
-                            bool check = db.Check(malop, "SELECT MaLopHoc FROM dbo.DayHoc");
+                            bool check = db.Check(malop, "SELECT MaLopHoc FROM DayHoc");
                             if (check == true)
                             {
 

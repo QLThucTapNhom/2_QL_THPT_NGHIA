@@ -27,7 +27,7 @@ namespace QL_GV_HS_THPT.GUI
         {
             string username = txtTaiKhoan.Text.TrimEnd();
             string password = txtMatKhau.Text.TrimEnd();
-            bool check = data.Check(password, "SELECT MatKhau FROM dbo.TaiKhoan WHERE TenTaiKhoan ='" + username + "'");
+            bool check = data.Check(password, "SELECT MatKhau FROM TaiKhoan WHERE TenTaiKhoan ='" + username + "'");
 
             if (txtTaiKhoan.Text != "" && txtMatKhau.Text != "" && check == true)
             {             
